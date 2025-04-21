@@ -1,10 +1,10 @@
 'use client'
-
 import { CHAT_ID } from '@/lib/constants'
 import { Model } from '@/lib/types/models'
-import { useChat } from '@ai-sdk/react'
-import { Message } from 'ai/react'
-import { useEffect } from 'react'
+// import { useChat } from '@ai-sdk/react'
+// import { Message } from 'ai/react'
+import { Message, useChat } from '@ai-sdk/react'
+import React, { useEffect } from 'react'
 import { toast } from 'sonner'
 import { ChatMessages } from './chat-messages'
 import { ChatPanel } from './chat-panel'
@@ -52,7 +52,7 @@ export function Chat({
 
   useEffect(() => {
     setMessages(savedMessages)
-  }, [id])
+  }, [id, savedMessages, setMessages])
 
   const onQuerySelect = (query: string) => {
     append({
